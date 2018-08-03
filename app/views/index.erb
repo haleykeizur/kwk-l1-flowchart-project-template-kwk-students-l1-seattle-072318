@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+</style>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-light-blue w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar">
+  <br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>Surviving<br>the<br>System</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
+    <a href="#Advice" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Advice</a> 
+    <a href="#Senior Year 'To-Do' List" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Senior Year "To-Do" List</a> 
+    <a href="#Stress Relief Quiz" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Stress Relief Quiz</a> 
+    <a href="#Helpful Resources" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Helpful Resources</a> 
+    <a href="#About the Creators" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">About the Creators</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+  <span>Company Name</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="showcase">
+    <h1 class="w3-jumbo"><b>Surviving the System</b></h1>
+    <h1 class="w3-xxlarge w3-text-light-blue"><b>High School Survival Guide.</b></h1>
+    <hr style="width:300px;border:3px solid black" class="w3-round">
+  </div>
+  
+  <!-- Photo grid (modal) -->
+  <div class="w3-row-padding">
+    <div class="w3-half">
+      <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3aef6d10744dd7cbc836b631f46c1e5e&auto=format&fit=crop&w=1950&q=80" style="width:100%" onclick="onClick(this)" alt="Concrete meets bricks">
+      <img src="https://images.unsplash.com/photo-1460518451285-97b6aa326961?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d5a547d47d12a58085026b18a54750f4&auto=format&fit=crop&w=1950&q=80" style="width:100%" onclick="onClick(this)" alt="Light, white and tight scandinavian design">
+      <img src="https://images.unsplash.com/photo-1505318591007-2e8a3edd6042?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8f5201b88cbdfa4bcd73c236430a2674&auto=format&fit=crop&w=2214&q=80" style="width:100%" onclick="onClick(this)" alt="White walls with designer chairs">
+    </div>
+
+    <div class="w3-half">
+      <img src="https://images.unsplash.com/photo-1511629091441-ee46146481b6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d22f0ea76aa44e822fa81f58c063a70d&auto=format&fit=crop&w=1950&q=80" style="width:100%" onclick="onClick(this)" alt="Windows for the atrium">
+      <img src="https://images.unsplash.com/photo-1441034281545-78296c3a6934?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=24d86ecc52a3e5d0d8f4f085e82a14ef&auto=format&fit=crop&w=1950&q=80" style="width:100%" onclick="onClick(this)" alt="Bedroom and office in one space">
+      <img src="https://images.unsplash.com/photo-1470549638415-0a0755be0619?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fca4fdf173544fec47eafc91aa1d9636&auto=format&fit=crop&w=1950&q=80" style="width:100%" onclick="onClick(this)" alt="Scandinavian design">
+    </div>
+  </div>
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+  <!-- Advice -->
+  <div class="w3-container" id="Advice" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-light-blue"><b>Advice.</b></h1>
+    <hr style="width:50px;border:5px solid black" class="w3-round">
+    <p>Surviving high school is hard. No student can survive without a little help. As older classmen who have experienced what high school has to offer, we have some advice based off some frequently asked question.</p>
+    <br>
+    <p><strong>How can you successfully balance school work, extracurriculars and social life?</strong></p>
+    <p>The key to it all is time management, planning, and delegating. During my senior year, I was in 4 AP classes, as well as our top band and newspaper class, in which I was the Editor-in-Chief, participated in two varsity sports, held numerous leadership position, completed hundreds of hours of community service, was involved in faith-based organizations, honor societies and clubs, all while balancing portfolios, college applications, babysitting jobs, a social life and time with family. To understate it, I was often very overwhelmed. But throughout high school, my planner became my best friend. I wrote down every commitment, activities and bit of homework. I knew my schedule so I didn’t agree to things I couldn’t do, and I strategically planned things that wouldn’t coincide (however, I found myself driving back and forth from places, leaving early and arriving late if I had numerous things in a night). Communication is also crucial. Especially adults are so open-minded and willing if you communicate your time conflicts and emphasize that you’re doing your best to get there. Also, communicating with teachers is also very important. For example, all my teachers knew how busy I was and how many responsibilities I had with newspaper, so if I needed to leave class or work around their schedule, they were much more understanding. Getting used to your teachers typical homework schedule can help. For me, I knew I would have AP government notes due every week or every other week so I prepped and did them all on the weekends because I knew I wouldn’t have time during the week. I typically knew I’d want to be social on Friday nights and would have cross country/track meets on Saturdays so I had to reserve Sunday’s for homework. I also got to school early and did AP calc homework and studying every morning. Lastly, knowing your limits and being okay with delegating little responsibilities it very important. You don’t want to burn out or quit on people so you can’t take on more than you can handle. There are people that want to help you, so let them!</p>
+    <br>
+   
+</div>
+    <br>
+    <p><strong>How can you transition from middle school to high school smoothly?</strong></p>
+    <p>The thing is, you aren’t transitioning alone. You have your entire grade with you. Everyone is starting off fresh, so make the best of it. My best tip to do so is to find a good group of friends that you can make the transition with. It is the beginning of a new phase in life for everyone, so people will be more open and friendly. Take that opportunity to weave yourself in and start a conversation with someone new. In reality, all of the upperclassmen and teachers have made the transition before and they will be empathetic and support you for your first year. Just have fun, because you only go through high school once, so make the best of it!</p>
+    <br>
+    <p><strong>What are ways you can get involved with the community?</strong></p>
+    <p>As generic as it seems, seek out and join as many clubs as you can balance! Many schools allow you to explore different clubs by attending the first couple meetings. By experimenting with different clubs at the beginning of the year, you get a feel for what each club has to offer as well as the community it facilitates. This is important because through these clubs you gain the potential to find a passion and form strong connections to your community. Finding one or two clubs your passionate about to invest your time and energy in will allow you to gain a sense of purpose, strong community, and character development. Remember, through any club you only get out what you put in, so make the most of your high school experience by dedicating yourself to them. Before you know it, you’ll have a strong bonded community to rely on which is most significant when finding strong friendships to navigate through your years throughout high school with. </p>
+    <br>
+    <p><strong>I’m taking multiple AP classes and don’t know how to study for all the tests at once. How do I balance that?</strong></p>
+    <p>Scheduling is so important! I typically make an extra planner/calendar during AP season so I can plan the studying I want to do each night. I used AP prep books and crash course to study for most of my tests, as well as the materials my teachers gave me in class. There are also a ton of online resources. I found that I didn’t need to study for every test every night, but rather pick a couple to focus on each evening. Each night you should balance the activities you’re doing, so maybe do some reading for AP government then watch some crash course videos for AP chemistry. Take advantage of all your time, too. If you get to school early, do an AP calc practice test and do reading in between classes. Another important factor is knowing what you have time for each evening. If I know I’m busy from after school until 9:00, then I won’t schedule myself with much because I don’t want to get behind. You should also prioritize your tests. Most likely, some classes will be easier than others so you will want to do more studying for the other classes. Also consider when your tests are. This year I had 3 tests in one week so I mostly studied those for the prior month. Then I had a week in between for the AP calc BC test, so I mostly studied that. Prioritizing will make your studying for effective and practical, as well as make it easier to organize your time.</p>
+    <br>
+    <p><strong>How can you make friends in high school?</strong></p>
+    <p>As you change, so will your group of friends. And since you are always changing, you are going to need a way to make new friends, constantly. The best way to find people you can bond with is to be more engaged in your community. By doing so, you are exposing yourself to more people. To take it a step further, you can join a club or a sports team that you have a passion for. When you do that, the likeliness of finding people with similar passions to you drastically increase. The more similarities you have with a person, the easier it is to bond with a person. Don’t change yourself to make new friends. Stick to your true self and the right friends will drift towards your direction. At the end of the day, all you can really rely on is yourself, so don’t lose yourself in the process of meeting other people.</p>
+    <br>
+    <p><strong>Everyone makes a big deal about taking the SAT, but how do I prepare for it?</strong></p>
+    <p>My number one tip would be to take it at least twice! Take it sometime in the middle of junior year, such as January, and go in with an open mind. Don’t worry about studying and just get a feel for the test and what you know and don’t know. After the test, order your score report and questions and look over what you missed. If it helps, make a list of topics that tripled you up and use that to guide your studying for the next time you take it. Take advantage of resources too. For example, there are some great YouTube videos out there with a variety of tips, geared towards different types of students. While those “how to get a perfect score” videos may not guarantee you a perfect score, they often have useful tips to get you close. You can also learn a lot from other classes you take and activities you do. I found that taking AP Lang and tutoring a student in geometry helped me prepare for the test. I personally think that the best time to take the SAT for a second time is in June, or at the end of junior year. Most likely you’ll be preparing for finals in your classes so you’ll probably have the max knowledge you’ll ever have, especially before you forget a lot over the summer. I personally didn’t study much for the SAT the second time, but a lot of my peers used SAT prep books or Khan Academy. I think the trick to my success was really just taking a second time and feeling more prepared; I increased my score by 200 points. If you still don’t feel confident with your score, go ahead and take it again! However, be careful with how many times you take it; if colleges see you’ve taken it many times and haven’t improved your score, they’re opinion of you will lower. Lastly, look over the colleges you want to apply to and what they are looking for because this may dictate how you study. Some schools take your best overall score, while others take your best overall math score  and best overall reading score from all of your tests. If the latter is the case, you may want to focus on getting a high math score one test and a high reading score another test. Overall, remember that your SAT score does not in any way define how smart you are and it is only a minor part of the college application process.</p>
+    <br>
+    <p><strong>Should you take AP (Advanced Placement) classes?</strong></p>
+    <p>It all comes down to whether or not you think it is fit for you. Society has set us up to make us think that taking AP classes are always the answer, but in reality, it really depends on who you are. Depending on your goals for high school, AP classes may or may not be for you. For example, if your goal is to finish school with a high GPA, you may take less AP classes to sustain your high GPA. But, if you have a different goal, such as getting as many AP credits as possible, you may take more AP classes. Don’t take classes based on what classes your friends are taking because we are all different and you may have different interests than your friends’. What you need to remember when selecting your classes is to not put too much pressure or stress on yourself. But, at the same time, don’t make things too easy for yourself. You want to have a healthy balance so you can still enjoy yourself while developing a productive work ethic. Prioritize your mental health before prioritizing your grades.
+</p>
+    <br>
+    <p><strong>What are ways to effectively deal with stress?</strong></p>
+    <p>The truth is, there is no single simplistic answer I can give. Stress is a natural way of life and it can either be a positive motivator or a detriment to your mental health. However, being able to distinguish the difference between healthy and unhealthy stress will help in being able to cope effectively. The majority of stress deriving from school arises from the feeling of overwhelment. Having a solid study plan for each week will help in minimizing the amount of stress by managing  your workload effectively. It’s also managing the little things such as planning out all your outfits on Sunday night for the week, or preparing your lunch the night before, etc that help alleviate unnecessary stress in the morning and night. But things happen. You can plan all you want, and have things still go wrong. We’ve all been there before, when your final is set for tomorrow morning and you have only began studying the surface of the material. However, there is no point after studying hours on end, because the material is no longer processing since it is so late at night. The last thing you want is to burn yourself out for the next morning come test time. Next time you are falling asleep during your late at night study session, put away the books and get well rested so you can take the test clear-minded. As for daily assignments, allow yourself a timed break just to relax and take time for yourself whether that means taking a walk, calling a friend, or just watching an episode of your fav show on netflix then return when your mind is well rested. </p>
+  </div>
+  <br>
+  
+    <!-- Senior year To-Do List -->
+    <div class="w3-container" id="Senior Year 'To-Do' List" style="margin-top:75px">
+      <div class="w3-main" style="margin-left:340px;margin-right:40px">
+    <h1 class="w3-xxxlarge w3-text-light-blue"><b>Senior Year 'To-Do' List.</b></h1>
+    <hr style="width:50px;border:5px solid black" class="w3-round">
+    
+    <meta name="viewport" content="width=200px, initial-scale=1">
+<style>
+
+img {
+  vertical-align: sub;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+</style>
+<body>
+
+<h2 style="text-align:center">The Ideal Senior Year Check-List</h2>
+
+<div class="container">
+  <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
+    <img src="https://haleykeizurblog.files.wordpress.com/2018/08/img_2359.jpg?w=1400" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 6</div>
+    <img src="https://haleykeizurblog.files.wordpress.com/2018/08/img_2360.jpg?w=1400" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 6</div>
+    <img src="https://haleykeizurblog.files.wordpress.com/2018/08/img_2361.jpg?w=1400" style="width:100%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">4 / 6</div>
+    <img src="https://haleykeizurblog.files.wordpress.com/2018/08/img_2362.jpg?w=1400" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 6</div>
+    <img src="https://haleykeizurblog.files.wordpress.com/2018/08/img_2363.jpg?w=1400" style="width:100%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
+    <img src="https://haleykeizurblog.files.wordpress.com/2018/08/img_2364.jpg?w=1400" style="width:100%">
+  </div>
+    
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="https://haleykeizurblog.files.wordpress.com/2018/08/img_2359.jpg?w=1400" style="width:100%" onclick="currentSlide(1)" alt="1. Organize Your Classes">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="https://haleykeizurblog.files.wordpress.com/2018/08/img_2360.jpg?w=1400" style="width:100%" onclick="currentSlide(2)" alt="2. Research and Preparation">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="https://haleykeizurblog.files.wordpress.com/2018/08/img_2362.jpg?w=1400" style="width:100%" onclick="currentSlide(3)" alt="3. College Applications and Admissions Process">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="https://haleykeizurblog.files.wordpress.com/2018/08/img_2362.jpg?w=1400" style="width:100%" onclick="currentSlide(4)" alt="4. Scholarship Applications">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="https://haleykeizurblog.files.wordpress.com/2018/08/img_2363.jpg?w=1400" style="width:100%" onclick="currentSlide(5)" alt="5. Take Part in Extracurricular Activities">
+    </div>    
+    <div class="column">
+      <img class="demo cursor" src="https://haleykeizurblog.files.wordpress.com/2018/08/img_2364.jpg?w=1400" style="width:100%" onclick="currentSlide(6)" alt="6. Have Fun">
+    </div>
+  </div>
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+<br>
+<br>
+    
+    <p>Senior Year can be difficult and many students have no idea what to expect as they head into their final year of high school.</p>
+    <br>
+    <p>In June, I walked across the graduation stage to accept my diploma. While there was never a doubt that I’d graduate, senior year was full of meeting high expectations and balancing my life to get everything done in an effective manner. Here is my to-do list for my fellow seniors out there, so you can make sure you’re prepared for the year and able to better handle any challenges that come your way:
+    </p>
+    <br>
+   
+  </div>
+  
+  <!-- Stress Relief Quiz -->
+  <div class="w3-container" id="Stress Relief Quiz" style="margin-top:75px">
+    <div class="w3-main" style="margin-left:340px;margin-right:40px">
+    <h1 class="w3-xxxlarge w3-text-light-blue"><b>Stress Relief Quiz.</b></h1>
+    <hr style="width:50px;border:5px solid black" class="w3-round">
+     <meta charset="UTF-8">
+    <title>title</title>
+    <link rel="stylesheet" href="css/style.css">
+<h3>Are you stressed? Want to take a break from studying? Enter your name to get your personalized fun activity you should do AFTER you're done studying!
+</h3>
+<p>Please enter your name:</p>
+<form method=POST>
+  <input type = "text" name = "user">
+  <br>
+  <br>
+  <input type="submit" value="GET YOUR POST-STRESS ACTIVITY">
+</form>  
+   
+  </div>
+<br>
+<br>
+<br>
+  <!-- The Team -->
+  <div class="w3-row-padding w3-grayscale">
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <!--<img src="/w3images/team2.jpg" alt="John" style="width:100%">-->
+        <div class="w3-container">
+          <!--<h3>John Doe</h3>-->
+          <!--<p class="w3-opacity">CEO & Founder</p>-->
+          <!--<p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>-->
+        </div>
+      </div>
+    </div>
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <!--<img src="/w3images/team1.jpg" alt="Jane" style="width:100%">-->
+        <div class="w3-container">
+          <!--<h3>Jane Doe</h3>-->
+          <!--<p class="w3-opacity">Designer</p>-->
+          <!--<p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>-->
+        </div>
+      </div>
+    </div>
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <!--<img src="/w3images/team3.jpg" alt="Mike" style="width:100%">-->
+        <div class="w3-container">
+          <!--<h3>Mike Ross</h3>-->
+          <!--<p class="w3-opacity">Architect</p>-->
+          <!--<p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>-->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Helpful Resources -->
+  <div class="w3-container" id="Helpful Resources" style="margin-top:75px">
+    <div class="w3-main" style="margin-left:340px;margin-right:40px">
+    <h1 class="w3-xxxlarge w3-text-light-blue"><b>Helpful Resources.</b></h1>
+    <hr style="width:50px;border:5px solid black" class="w3-round">
+    <p>Between navigating the dynamics of a new school, learning smart SAT strategies, and preparing for college, high school can become extremely stressful for a student striving for a successful higher education. Here we have provided numerous links to helpful resources dedicated to each individual grade.</p>
+  </div>
+  <div class="w3-row-padding">
+    <div class="w3-half w3-margin-bottom">
+      <ul class="w3-ul w3-light-grey w3-center">
+        <!--<li class="w3-dark-grey w3-xlarge w3-padding-32">Basic</li>-->
+        <!--<li class="w3-padding-16">Floorplanning</li>-->
+        <!--<li class="w3-padding-16">10 hours support</li>-->
+        <!--<li class="w3-padding-16">Photography</li>-->
+        <!--<li class="w3-padding-16">20% furniture discount</li>-->
+        <!--<li class="w3-padding-16">Good deals</li>-->
+        <!--<li class="w3-padding-16">-->
+        <!--  <h2>$ 199</h2>-->
+        <!--  <span class="w3-opacity">per room</span>-->
+        <!--</li>-->
+        <!--<li class="w3-light-grey w3-padding-24">-->
+        <!--  <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>-->
+        <!--</li>-->
+      </ul>
+    </div>
+        
+    <div class="w3-half">
+      <ul class="w3-ul w3-light-grey w3-center">
+        <!--<li class="w3-red w3-xlarge w3-padding-32">Pro</li>-->
+        <!--<li class="w3-padding-16">Floorplanning</li>-->
+        <!--<li class="w3-padding-16">50 hours support</li>-->
+        <!--<li class="w3-padding-16">Photography</li>-->
+        <!--<li class="w3-padding-16">50% furniture discount</li>-->
+        <!--<li class="w3-padding-16">GREAT deals</li>-->
+        <!--<li class="w3-padding-16">-->
+        <!--  <h2>$ 249</h2>-->
+        <!--  <span class="w3-opacity">per room</span>-->
+        <!--</li>-->
+        <!--<li class="w3-light-grey w3-padding-24">-->
+        <!--  <button class="w3-button w3-red w3-padding-large w3-hover-black">Sign Up</button>-->
+        <!--</li>-->
+      </ul>
+    </div>
+  </div>
+  
+  <!-- About the Creators -->
+  <div class="w3-container" id="About the Creators" style="margin-top:75px">
+    <div class="w3-main" style="margin-left:340px;margin-right:40px">
+    <h1 class="w3-xxxlarge w3-text-light-blue"><b>About the Creators.</b></h1>
+    <hr style="width:50px;border:5px solid black" class="w3-round">
+    <p>While each of us have different experiences and talents, Kode with Klossy brought us together with one simple activity: coding. Together we created this website to educate high school students and offer resources for stressed and uninformed teenagers. Here is some insight on each of us as individuals.</p>
+    
+    <!-- The Team -->
+  <div class="w3-row-padding w3-grayscale">
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="https://haleykeizurblog.files.wordpress.com/2018/08/kaitlynh.jpg?w=1400" alt="Kaitinh" style="width:100%">
+        <div class="w3-container">
+          <h3>Kaitlinh Bui</h3>
+          <p class="w3-opacity">Computer Programmer</p>
+          <p>Kaitlinh Bui is a part of the Newport High School Class of 2021. She believes that, although she has less high school experience in comparison to her co-creators, she has learned impactful lessons that are worth sharing. Through the coding program Kode with Klossy, she has been able to find an outlet to share her tips and tricks on “Surviving the System”. She has had a positive experience with high school and wants to help others make the best of the 4 years..</p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="https://haleykeizurblog.files.wordpress.com/2018/08/ashley.jpg?w=1400" alt="Ashley" style="width:100%">
+        <div class="w3-container">
+          <h3>Ashley Vu</h3>
+          <p class="w3-opacity">Web Developer</p>
+          <p>Ashley Vu, junior at Inglemoor High School, will be graduating in the class of 2020. Her experience being actively involved in business extracurriculars at her school combined with her new coding knowledge, gained through Kode with Klossy, has allowed her to contribute to the web application, “Surviving the System.” The app is the first she has created and acts as a stepping stone for her as she plans to continuing blending her passion for business with her newfound interest in coding.</p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="https://haleykeizurblog.files.wordpress.com/2018/01/seattle-times-photo-e1518067374177.jpg" alt="Haley" style="width:100%">
+        <div class="w3-container">
+          <h3>Haley Keizur</h3>
+          <p class="w3-opacity">Software Engineer</p>
+          <p>Haley Keizur graduated from Puyallup High School with the class of 2018 and is now beginning her journey at the University of San Francisco. She was able to combine her passion and talents for journalism with her new coding knowledge to create “Surviving the System” with her peers. As a recent senior, who took numerous advanced courses, succeeded in the classroom, held multiple leadership positions and had to balance a busy life filled with extracurriculars, she is able to impart wisdom upon future students.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!--<form action="/action_page.php" target="_blank">-->
+    <!--  <div class="w3-section">-->
+    <!--    <label>Name</label>-->
+    <!--    <input class="w3-input w3-border" type="text" name="Name" required>-->
+    <!--  </div>-->
+    <!--  <div class="w3-section">-->
+    <!--    <label>Email</label>-->
+    <!--    <input class="w3-input w3-border" type="text" name="Email" required>-->
+    <!--  </div>-->
+    <!--  <div class="w3-section">-->
+    <!--    <label>Message</label>-->
+    <!--    <input class="w3-input w3-border" type="text" name="Message" required>-->
+    <!--  </div>-->
+    <!--  <button type="submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Send Message</button>-->
+    <!--</form>  -->
+  </div>
+
+<!-- End page content -->
+</div>
+
+<!-- W3.CSS Container -->
+<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></p></div>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
+
+</body>
+</html>
+
